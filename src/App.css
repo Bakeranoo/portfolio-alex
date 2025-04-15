@@ -1,0 +1,10 @@
+.content {
+    overflow: hidden; /* Permite el desplazamiento automático */
+    height: 100vh; /* Altura del viewport */
+    scroll-behavior: smooth; /* Habilita el desplazamiento suave */
+}
+
+.content-window {
+    width: 100%;
+    height: 100%;
+}

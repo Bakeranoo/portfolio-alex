@@ -1,0 +1,38 @@
+.about-me {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    margin: 2rem auto;
+}
+
+.about-me-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-me-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.about-me-card {
+    background-color: var(--custom-secondary-color);
+    color: var(--custom-text-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: max-content;
+}
+
+.about-me-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.about-me-content {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,22 @@
+.nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: var(--padding-m) var(--padding-l);
+    background-color: transparent;
+    height: 10%;
+    width: 100%;
+    min-height: 60px;
+
+    .nav-button {
+        background-color: transparent;
+        border: 2px solid transparent;
+    }
+
+    .nav-bar-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+}
