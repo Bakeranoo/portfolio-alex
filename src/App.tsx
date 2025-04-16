@@ -13,7 +13,7 @@ import Contact from './pages/contact/Contact';
  * @description Esta función es la entrada principal de la aplicación.
  */
 function App() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme] = useState<'light' | 'dark'>('dark');
   const [assetsLoaded, setAssetsLoaded] = useState(false);
   const [currentSection, setCurrentSection] = useState(0); // Controla la sección actual
 

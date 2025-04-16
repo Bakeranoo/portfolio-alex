@@ -1,5 +1,4 @@
 import { Button } from 'primereact/button';
-import Background from '../../shared/components/background/Background';
 import './Home.css';
 
 const Home = () => {
