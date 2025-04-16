@@ -5,16 +5,17 @@ import './BaseSchema.css';
 
 type BaseSchemaProps = {
     content: React.ReactNode;
+    setCurrentSection: (index: number) => void;
 }
 
-const BaseSchema = ({ content }: BaseSchemaProps) => {
+const BaseSchema = ({ content, setCurrentSection }: BaseSchemaProps) => {
     return (
         <div className="base-schema">
             <div style={{ display: 'flex', height: '100vh', alignItems: 'center', marginLeft: '40px' }}>
                 <Sidebar />
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100vh' }}>
-                <NavBar />
+                <NavBar setCurrentSection={setCurrentSection} />
                 { content ? content : <></> }
             </div>
         </div>

@@ -6,14 +6,14 @@ const Sidebar = () => {
         <div className="sidebar">
             <div className='start'>
                 <div className="sidebar-header">
-                    <img src="/sprites/player/sprite_0.png" alt="logo" className="logo-image" />
+                    <img src="/portfolio-alex/sprites/player/sprite_0.png" alt="logo" className="logo-image" />
                     <div>
                         <h2>Àlex<br/>Agustí Moncasi</h2>
                     </div>
                 </div>
 
                 <div className='sidebar-image'>
-                    <img src="/sprites/map/map.png" alt="Profile" className="profile-image" />
+                    <img src="/portfolio-alex/sprites/map/map.png" alt="Profile" className="profile-image" />
                 </div>
 
                 <div>
@@ -30,8 +30,9 @@ const Sidebar = () => {
             <div className="end">
                 <div>
                     <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
-                        <Button icon="pi pi-linkedin" className="p-button-outlined" onClick={() => window.open('https://www.linkedin.com/in/alex-agusti-moncasi/', '_blank')} />
-                        <Button icon="pi pi-github" className="p-button-outlined" onClick={() => window.open('https://www.linkedin.com/in/alex-agusti-moncasi/', '_blank')} />
+                        <Button icon="pi pi-linkedin" className="p-button-outlined" onClick={() => window.open('https://www.linkedin.com/in/%C3%A0lex-agust%C3%AD-moncasi-252a37245/', '_blank')} />
+                        <Button icon="pi pi-github" className="p-button-outlined" onClick={() => window.open('https://github.com/Bakeranoo', '_blank')} />
+                        <Button icon="pi pi-google" className="p-button-outlined" onClick={() => window.open('https://drive.google.com/drive/folders/1ll0E85VZopMhQVoutAt9EV_jH3c9V-Hz?usp=sharing', '_blank')} />
                         <Button icon="pi pi-envelope" className='p-button-outlined' onClick={() => window.open('https://www.linkedin.com/in/alex-agusti-moncasi/', '_blank')} />
                     </div>
                 </div>

@@ -31,3 +31,7 @@
     margin-top: 1rem;
     font-size: 0.9rem;
 }
+
+.p-card-subtitle {
+    color: var(--custom-text-color);
+}

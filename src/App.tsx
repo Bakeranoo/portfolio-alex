@@ -20,11 +20,11 @@ function App() {
   const sectionsRef = useRef<HTMLDivElement[]>([]); // Referencias a las secciones
 
   const assets = [
-    '/sprites/player/sprite_0.png',
-    '/sprites/player/sprite_1.png',
-    '/sprites/player/sprite_2.png',
-    '/sprites/player/sprite_3.png',
-    '/sprites/map/map.png',
+    '/portfolio-alex/sprites/player/sprite_0.png',
+    '/portfolio-alex/sprites/player/sprite_1.png',
+    '/portfolio-alex/sprites/player/sprite_2.png',
+    '/portfolio-alex/sprites/player/sprite_3.png',
+    '/portfolio-alex/sprites/map/map.png',
   ];
 
   // Cambiar el tema de la aplicación
@@ -73,13 +73,14 @@ function App() {
         <BaseSchema
           content={
             <div className="content">
-              <div className='content-window' ref={(el) => { sectionsRef.current[0] = el!; }}><Home /></div>
+              <div className='content-window' ref={(el) => { sectionsRef.current[0] = el!; }}><Home setCurrentSection={setCurrentSection} /></div>
               <div className='content-window' ref={(el) => { sectionsRef.current[1] = el!; }}><AboutMe /></div>
               <div className='content-window' ref={(el) => { sectionsRef.current[2] = el!; }}><Projects /></div>
               <div className='content-window' ref={(el) => { sectionsRef.current[3] = el!; }}><Contact /></div>
               {/* Agrega más secciones aquí si es necesario */}
             </div>
           }
+          setCurrentSection={setCurrentSection}
         />
       </div>
     );

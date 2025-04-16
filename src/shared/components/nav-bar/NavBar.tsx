@@ -2,7 +2,11 @@ import { Button } from 'primereact/button';
 import { useState } from 'react';
 import './NavBar.css';
 
-const NavBar = () => {
+type NavBarProps = {
+    setCurrentSection: (index: number) => void;
+}
+
+const NavBar = ({ setCurrentSection }: NavBarProps) => {
 
     const [currentSelectedButton, setCurrentSelectedButton] = useState(0);
     const items = [
@@ -18,6 +22,7 @@ const NavBar = () => {
         buttons[index].classList.add('selected');
 
         setCurrentSelectedButton(index);
+        setCurrentSection(index);
     }
 
     return (
