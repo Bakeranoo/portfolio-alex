@@ -1,19 +1,15 @@
+import React, { useState } from 'react';
 import './AboutMe.css';
-import { useState } from 'react';
-import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
 
 const AboutMe = () => {
-    const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
     const highlights = [
-        {
-            title: "Presentación",
-            content: "¡Hola! Soy Àlex Agustí, desarrollador full-stack con más de dos años de experiencia en desarrollo web. Aunque trabajo tanto en frontend como en backend, lo que realmente disfruto es el frontend, donde puedo dar vida a las ideas a través del código.",
-        },
         {
             title: "Formación",
             content: "Me formé en Desarrollo de Aplicaciones Multiplataforma (DAM), con un enfoque orientado al desarrollo de videojuegos. Esa base me dio una forma distinta de ver los proyectos, con atención al detalle y al rendimiento.",
+        },
+        {
+            title: "Experiencia profesional",
+            content: "Empezé como becario en la empresa GMV (donde actualmente trabajo) y he tenido la oportunidad de participar en varios proyectos. He trabajado en el desarrollo de aplicaciones web, tanto en front como en back-end, lo que me ha permitido adquirir muchos conocimientos.",
         },
         {
             title: "Aprendizaje",
@@ -37,34 +33,25 @@ const AboutMe = () => {
         },
     ];
 
-    const handleToggle = (index: number) => {
-        setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+    const toggleAccordion = (index: number) => {
+        setActiveIndex(activeIndex === index ? null : index);
     };
 
     return (
         <div className="about-me">
-            <h1 className="about-me-title">Sobre mí</h1>
-            <div className="about-me-cards">
+            <h1 className="section-title">Algunas cosas sobre mí</h1>
+            <div className="about-me-accordion">
                 {highlights.map((highlight, index) => (
-                    <Card
+                    <div
                         key={index}
-                        title={highlight.title}
-                        className="about-me-card"
-                        footer={
-                            <Button
-                                label={expandedIndex === index ? "Mostrar menos" : "Mostrar más"}
-                                icon={`pi ${expandedIndex === index ? "pi-chevron-up" : "pi-chevron-down"}`}
-                                onClick={() => handleToggle(index)}
-                                className="p-button-text"
-                            />
-                        }
+                        className={`about-me-accordion-item ${activeIndex === index ? 'active' : ''}`}
+                        onClick={() => toggleAccordion(index)}
                     >
-                        {expandedIndex === index && (
-                            <div className="about-me-content">
-                                <p>{highlight.content}</p>
-                            </div>
-                        )}
-                    </Card>
+                        <div className="about-me-accordion-title">{highlight.title}</div>
+                        <div className="about-me-accordion-content">{highlight.content}</div>
+                    </div>
                 ))}
             </div>
         </div>

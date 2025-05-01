@@ -1,12 +1,6 @@
 import './Projects.css';
-import { useState } from 'react';
-import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
 
 const Projects = () => {
-    const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-
     const projects = [
         {
             title: "En Clave Formativa",
@@ -29,44 +23,29 @@ const Projects = () => {
         },
     ];
 
-    const handleToggle = (index: number) => {
-        setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
-    };
-
     return (
-        <div className="projects-page" id="projects">
-            <h1>Proyectos</h1>
+        <div className="projects-page">
+            <h1 className="section-title">Proyectos</h1>
             <div className="projects-container">
                 {projects.map((project, index) => (
-                    <Card
-                        key={index}
-                        title={project.title}
-                        subTitle={project.description}
-                        className="project-card"
-                        footer={
-                            <Button
-                                label={expandedIndex === index ? "Show Less" : "Show More"}
-                                icon={`pi ${expandedIndex === index ? "pi-chevron-up" : "pi-chevron-down"}`}
-                                onClick={() => handleToggle(index)}
-                                className="p-button-text"
-                            />
-                        }
-                    >
-                        {expandedIndex === index && (
-                            <div className="project-details">
-                                <p>{project.details}</p>
-                                <p><strong>Tecnologías:</strong> {project.technologies.join(", ")}</p>
-                                {project.link && (
-                                    <Button
-                                        label="Ver Proyectos"
-                                        icon="pi pi-link"
-                                        onClick={() => window.open(project.link, "_blank")}
-                                        className="p-button-text"
-                                    />
-                                )}
-                            </div>
-                        )}
-                    </Card>
+                    <div key={index} className="project-card">
+                        <div className="project-card-front">
+                            <h2 className="project-title">{project.title}</h2>
+                            <p className="project-description">{project.description}</p>
+                        </div>
+                        <div className="project-card-back">
+                            <p className="project-details">{project.details}</p>
+                            <p><strong>Tecnologías:</strong> {project.technologies.join(", ")}</p>
+                            {project.link && (
+                                <button
+                                    className="project-link"
+                                    onClick={() => window.open(project.link, "_blank")}
+                                >
+                                    Ver Proyectos
+                                </button>
+                            )}
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
