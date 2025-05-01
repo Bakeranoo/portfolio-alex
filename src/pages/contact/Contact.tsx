@@ -1,3 +1,4 @@
+import { Button } from 'primereact/button';
 import './Contact.css';
 
 const Contact = () => {
@@ -12,7 +13,7 @@ const Contact = () => {
                         <input type="text" placeholder="Nombre" required />
                         <input type="email" placeholder="Email" required />
                         <textarea placeholder="Mensaje" required></textarea>
-                        <button type="submit">Enviar</button>
+                        <Button type="submit">Enviar</Button>
                     </form>
                 </div>
             </div>

@@ -1,58 +1,51 @@
 import './Projects.css';
-import { useState } from 'react';
-import { Card } from 'primereact/card';
-import { Button } from 'primereact/button';
 
 const Projects = () => {
-    const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
     const projects = [
         {
-            title: "Project 1",
-            description: "Brief description of project 1.",
-            details: "Detailed information about project 1. This project was built using React, Node.js, and MongoDB. It includes features like authentication, real-time updates, and more.",
+            title: "En Clave Formativa",
+            description: "Proyectos realizados durante mi formación.",
+            details: "Los proyectos formativos incluyen una variedad de aplicaciones y juegos desarrollados con Unity. Cada proyecto tiene un enfoque diferente, desde la creación de entornos 3D hasta la implementación de mecánicas de juego complejas.",
+            technologies: ["Unity", "C#", "Blender"],
+            link: "https://drive.google.com/drive/folders/1ll0E85VZopMhQVoutAt9EV_jH3c9V-Hz?usp=sharing",
         },
         {
-            title: "Project 2",
-            description: "Brief description of project 2.",
-            details: "Detailed information about project 2. This project focuses on frontend development with advanced animations and responsive design using CSS and JavaScript.",
+            title: "En Clave Laboral",
+            description: "Proyectos realizados en el ámbito laboral.",
+            details: "En el ámbito laboral, he trabajado en proyectos web para diversas empresas, incluyendo la ESA y el Tesoro Público. Estos proyectos abarcan desde aplicaciones de gestión hasta plataformas de análisis de datos.",
+            technologies: ["React", "Angular", "Typescript", "Node.js", "Java", "Spring", "JSP", "HTML", "CSS"],
         },
         {
-            title: "Project 3",
-            description: "Brief description of project 3.",
-            details: "Detailed information about project 3. This project is a full-stack application with a focus on scalability and performance optimization.",
+            title: "En Clave Personal",
+            description: "Proyectos personales y de ocio.",
+            details: "He desarrollado varios proyectos personales que reflejan mis intereses y habilidades. Estos incluyen juegos independientes y aplicaciones experimentales, donde he podido explorar nuevas tecnologías y enfoques creativos.",
+            technologies: ["Unity", "C#", "React", "Unreal Engine"],
         },
     ];
 
-    const handleToggle = (index: number) => {
-        setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
-    };
-
     return (
-        <div className="projects-page" id="projects">
-            <h1>Projects</h1>
+        <div className="projects-page">
+            <h1 className="section-title">Proyectos</h1>
             <div className="projects-container">
                 {projects.map((project, index) => (
-                    <Card
-                        key={index}
-                        title={project.title}
-                        subTitle={project.description}
-                        className="project-card"
-                        footer={
-                            <Button
-                                label={expandedIndex === index ? "Show Less" : "Show More"}
-                                icon={`pi ${expandedIndex === index ? "pi-chevron-up" : "pi-chevron-down"}`}
-                                onClick={() => handleToggle(index)}
-                                className="p-button-text"
-                            />
-                        }
-                    >
-                        {expandedIndex === index && (
-                            <div className="project-details">
-                                <p>{project.details}</p>
-                            </div>
-                        )}
-                    </Card>
+                    <div key={index} className="project-card">
+                        <div className="project-card-front">
+                            <h2 className="project-title">{project.title}</h2>
+                            <p className="project-description">{project.description}</p>
+                        </div>
+                        <div className="project-card-back">
+                            <p className="project-details">{project.details}</p>
+                            <p><strong>Tecnologías:</strong> {project.technologies.join(", ")}</p>
+                            {project.link && (
+                                <button
+                                    className="project-link"
+                                    onClick={() => window.open(project.link, "_blank")}
+                                >
+                                    Ver Proyectos
+                                </button>
+                            )}
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>

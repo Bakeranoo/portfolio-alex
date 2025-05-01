@@ -1,39 +1,38 @@
-/* Modo Claro (Default) */
 :root {
-    --custom-primary-color: #7a5fff; /* Lila más fuerte para destacar */
-    --custom-secondary-color: #f0f0f0; /* Gris muy claro para bloques secundarios */
-    --custom-background-color: #ffffff; /* Fondo blanco */
-    --custom-accent-color: #a88bff; /* Lila pastel como acento */
-    --custom-text-color: #1a1a1a; /* Texto oscuro */
-    --custom-button-hover-color: #cdbdff; /* Lila claro al hacer hover */
-    --custom-button-background-color: #ebe4ff; /* Fondo de botón suave */
-    --custom-button-text-color: #1a1a1a; /* Texto oscuro en botón */
-    --custom-button-text-color-hover: #000000; /* Negro en hover */    
+    --custom-primary-color: #f5f5dc; /* Beige claro (fondo principal) */
+    --custom-secondary-color: #eae0c8; /* Beige más oscuro (secciones secundarias) */
+    --custom-background-color: #fffaf0; /* Fondo crema */
+    --custom-accent-color: #8b4513; /* Marrón oscuro (títulos y bordes) */
+    --custom-text-color: #4b3621; /* Marrón oscuro para texto */
+    --custom-button-hover-color: #d2b48c; /* Marrón claro (tono madera) */
+    --custom-button-background-color: #deb887; /* Marrón anaranjado (salmón tostado) */
+    --custom-button-text-color: #4b3621; /* Marrón oscuro */
+    --custom-button-text-color-hover: #000000; /* Negro */
     --padding-s: 0.5rem;
     --padding-m: 1rem;
     --padding-l: 1.5rem;
 }
 
-/* Modo Oscuro */
 .dark {
-    --custom-primary-color: #c9b6ff; /* Rojo (Cereza) */
-    --custom-secondary-color: #1d1d1d; /* Verde (Fresco) */
-    --custom-background-color: #0d0d0d; /* Fondo oscuro */
-    --custom-accent-color: #c9b6ff; /* Amarillo (Dorado) */
-    --custom-text-color: #bfbfbf; /* Blanco para texto */
-    --custom-button-hover-color: #87CEEB; /* Azul Claro */
-    --custom-button-background-color: #d9c3ff; /* Azul Oscuro */
-    --custom-button-text-color: #1a1a1a; /* Blanco para texto de botón */
-    --custom-button-text-color-hover: #000000; /* Negro para texto de botón en hover */
+    --custom-primary-color: #2f1b0c; /* Marrón muy oscuro (fondo principal) */
+    --custom-secondary-color: #4b3621; /* Marrón oscuro (secciones secundarias) */
+    --custom-background-color: #1c0f05; /* Fondo marrón oscuro */
+    --custom-accent-color: #a0522d; /* Marrón rojizo (títulos y bordes) */
+    --custom-text-color: #f5deb3; /* Trigo claro para texto */
+    --custom-button-hover-color: #8b4513; /* Marrón oscuro */
+    --custom-button-background-color: #a0522d; /* Marrón rojizo */
+    --custom-button-text-color: #f5deb3; /* Trigo claro */
+    --custom-button-text-color-hover: #ffffff; /* Blanco */
 }
 
 body {
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle at top left, var(--custom-primary-color) 0%, var(--custom-background-color) 40%, var(--custom-secondary-color) 100%);
+    background: var(--custom-primary-color);
     color: var(--custom-text-color);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, span {
@@ -41,6 +40,7 @@ h1, h2, h3, h4, h5, h6, p, a, span {
 }
 
 .p-button {
+    font-family: "Roboto Slab", serif;
     border-radius: 30px;
     border: 1px solid var(--custom-button-background-color);
 }
@@ -55,4 +55,29 @@ h1, h2, h3, h4, h5, h6, p, a, span {
     transition: all 0.5s ease-in-out;
     border: 2px solid var(--custom-button-background-color) !important;
     box-shadow: none !important;
+}
+
+.line {
+    width: 100%;
+    border-top: 2px solid var(--custom-text-color);
+    margin: 0.5rem 0rem;
+}
+
+.example-line {
+    height: 16px;
+    width: 100%;
+    background-color: var(--custom-text-color);
+}
+
+.example-line.short {
+    width: 60%;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--custom-text-color);
+    padding-bottom: 0.5rem;
 }

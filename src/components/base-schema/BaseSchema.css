@@ -1,6 +1,7 @@
 .base-schema {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--custom-text-color);
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

@@ -1,10 +1,38 @@
 .content {
-    overflow: hidden; /* Permite el desplazamiento automático */
-    height: 100vh; /* Altura del viewport */
-    scroll-behavior: smooth; /* Habilita el desplazamiento suave */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .content-window {
     width: 100%;
     height: 100%;
+    padding: 1rem;
+    border-bottom: 2px solid var(--custom-text-color);
+}
+
+.app {
+    height: 100vh;
+    overflow: auto;
+    font-family: 'Roboto Slab', serif;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.background {
+    background-color: var(--custom-primary-color);
+    position: absolute;
+    filter: url(#wavy2);
 }
